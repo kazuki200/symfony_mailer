@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello InquiryController!{% endblock %}
+
+{% block body %}
+  <a href="/">top</a>
+  {{ form_start(form, {
+    'action': path('app_event_inquiry_confirm'),
+    'method': 'POST'
+  }) }}
+  bb
+  {{ form_row(form.name) }}
+  {{ form_row(form.email) }}
+  {{ form_row(form.other) }}
+  <button type="submit">送信</button>
+  {{ form_end(form) }}
+
+  {% for message in app.flashes('error') %}
+    <div class="alert alert-danger">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endblock %}

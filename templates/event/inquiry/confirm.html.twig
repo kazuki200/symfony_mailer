@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello InquiryController!{% endblock %}
+
+{% block body %}
+
+  {{ form_start(ConfirmForm) }}
+  {{ form_row(ConfirmForm, {
+    attr: {
+      style: 'display:none'
+    }
+  }) }}
+  {{ data.name }}
+  {{ data.email }}
+  {{ data.other }}
+  <button type="submit">送信</button>
+  {{ form_end(ConfirmForm) }}
+{% endblock %}

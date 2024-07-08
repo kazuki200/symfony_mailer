@@ -1,0 +1,41 @@
+{% apply inline_css %}
+  <style>
+      .list {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+      }
+
+      .list__row {
+          display: flex;
+          gap: 8px;
+      }
+
+      .list__term {
+          font-size: 16px;
+          font-weight: 500;
+      }
+
+      .list__description {
+          font-size: 16px;
+          font-weight: 700;
+          color: red;
+          margin: 0;
+      }
+  </style>
+
+  <dl class="list">
+    <div class="list__row">
+      <dt class="list__term">{{ form.name.vars.label }}:</dt>
+      <dd class="list__description">{{ form.name.vars.value }}</dd>
+    </div>
+    <div class="list__row">
+      <dt class="list__term">{{ form.email.vars.value }}:</dt>
+      <dd class="list__description">{{ form.email.vars.value }}</dd>
+    </div>
+    <div class="list__row">
+      <dt class="list__term">{{ form.other.vars.value }}:</dt>
+      <dd class="list__description">{{ form.other.vars.value }}</dd>
+    </div>
+  </dl>
+{% endapply %}
